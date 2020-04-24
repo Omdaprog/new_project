@@ -1,4 +1,4 @@
-{% load static %}
+{% load static from static_in_env %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +8,111 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Helloo</h1>
+    <div class="container">
+        <header>
+            
+            <img class="logo" src="{% static 'images/logo.svg' %}" alt="">
+            <nav>
+                <a href="#" class="hide-desktop">
+                    <img src="{% static 'images/hamberger.svg' %}" alt="" class="menu" id="menu">
+                </a>
+
+                <ul class="show-desktop hide-mobile" id="nav">
+                    <li id="exit" class="exit-btn hide-desktop"><img src="{% static 'images/exit.svg' %}" alt=""></li>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">services</a></li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+            </nav>
+            
+        </header>
+
+        <section>
+            <img  src="{% static 'images/server.svg' %}" alt="server graphic" class="server">
+            <h1>Web Hosting for the Modern Era</h1>
+            <p class="subhead">Go serverless and pay for what you use</p>
+            <img src="{% static 'images/scroll.svg' %}" alt="scroll down" class="scroll hide-mobile show-desktop">
+        </section>
+    </div>
+
+    <div class="blue-container">
+        <div class="container">
+
+            <ul>
+                <li><img src="{% static 'images/icon-1.svg' %}" alt="calender icon">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui unde vitae molestias dignissimos, eos expedita blanditiis </p>
+                </li>
+                
+                <li><img src="{% static 'images/icon-2.svg' %}" alt="calender icon">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui unde vitae molestias dignissimos, eos expedita blanditiis </p>
+                </li>
+            
+                <li><img src="{% static 'images/icon-3.svg' %}" alt="calender icon">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui unde vitae molestias dignissimos, eos expedita blanditiis </p>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="gray-container">
+        <div class="container">
+            <ul>
+                <li>
+                    <figure>
+                        <img src="{% static 'images/user1.png' %}" alt="user picture">
+                        <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti illum quas similique , necessitatibus </blockquote>
+                        <figcaption>- Jane Doe</figcaption>
+                    </figure>
+                </li>
+
+                <li>
+                    <figure>
+                        <img src="{% static 'images/user2.png' %}" alt="user picture">
+                        <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti illum quas similique , necessitatibus </blockquote>
+                        <figcaption>- Jane Doe</figcaption>
+                    </figure>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Start your free trial Now !</h2>
+        <a href="#" class="cta">Get Started</a>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="container">
+                <a href="#"><img src="{% static 'images/logo2.svg' %}" alt="logo"></a>        
+                <p class="adress">Melrose Plase, 90210 <br>USA</p>
+                <ul class="footer-links">
+                    <li><a href="#">Terms of Services</a></li>
+                    <li><a href="#">Privacy of Services</a></li>
+                </ul> 
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    
+        var menu = document.getElementById('menu');
+        var nav = document.getElementById('nav');
+        var exit = document.getElementById('exit');
+
+        menu.addEventListener('click', function(e) {
+            nav.classList.toggle('hide-mobile');
+            e.preventDefault();
+        });
+
+        exit.addEventListener('click', function(e) {
+            nav.classList.add('hide-mobile');
+            e.preventDefault();
+        });
+
+    </script>
 </body>
 </html>
